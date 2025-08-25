@@ -1,0 +1,13 @@
+<h1>Products in Cart</h1>
+<h2>Current Products</h2>
+<ul>
+  <% @cart&.each do |product| %>
+    <li><%= product %></li>
+  <% end %>
+</ul>
+<h2>Add New Product</h2>
+<%= form_with local: true do |f|%>
+  <%= f.label :product %>
+  <%= f.text_field :product %>
+  <%= f.submit 'add to cart'%>
+<% end %>
